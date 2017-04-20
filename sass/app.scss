@@ -12,6 +12,9 @@
 
 $menu-link-active-bg: $secondary;
 $menu-link-active-hilight: $primary;
+
+$splash-image: false;
+
 @import "framework";
 
 .indicator {
@@ -61,6 +64,5 @@ $menu-link-active-hilight: $primary;
 .page-404 {
   min-height     : 250px;
   padding        : 50px 0 50px 250px;
-  background     : url('../images/working.png') no-repeat 25px 50px;
   background-size: 200px auto;
 }
