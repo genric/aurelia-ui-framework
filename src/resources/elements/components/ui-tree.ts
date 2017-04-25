@@ -204,8 +204,15 @@ export class UITree {
 
   private scrollIntoView() {
     UIEvent.queueTask(() => {
-      let x;
-      if ((x = this.element.querySelector('.ui-active')) !== null) x.scrollIntoView(false);
+      let x = this.element.querySelector('.ui-active');
+      if (x !== null) {
+        let rect = x.getBoundingClientRect();
+        if (rect.top < 0 || rect.left < 0
+            || rect.bottom > (window.innerHeight || document.documentElement.clientHeight)
+            || rect.right > (window.innerWidth || document.documentElement.clientWidth)) {
+          x.scrollIntoView(false);
+        }
+      }
     });
   }
 
