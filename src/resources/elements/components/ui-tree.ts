@@ -226,9 +226,9 @@ export class UITree {
     _.forEach(obj, (n: UITreeModel) => {
       n.text = n.text.replace(/<b>/gi, '')
         .replace(/<\/b>/gi, '');
-      n.expanded = !_.isEmpty(value) && n.level <= 2 && parentVisible === false;
+      n.expanded = _.isEmpty(value) || parentVisible === false;
 
-      if (_.isEmpty(value) && self.selectedNode.id == n.id && self.selectedNode.level == n.level) {
+      if (_.isEmpty(value) && self.selectedNode && self.selectedNode.id == n.id && self.selectedNode.level == n.level) {
         var p = n.parent;
         while (p) {
           p.expanded = true;
