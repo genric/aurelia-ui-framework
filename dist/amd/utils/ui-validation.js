@@ -70,10 +70,10 @@ define(["require", "exports", "aurelia-framework", "../elements/inputs/ui-markdo
             }
             catch (E) { }
         };
-        UIValidationRenderer = __decorate([
-            aurelia_framework_1.autoinject()
-        ], UIValidationRenderer);
         return UIValidationRenderer;
     }());
+    UIValidationRenderer = __decorate([
+        aurelia_framework_1.autoinject()
+    ], UIValidationRenderer);
     exports.UIValidationRenderer = UIValidationRenderer;
 });

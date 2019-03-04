@@ -9,8 +9,8 @@ System.register(["aurelia-framework", "../../utils/ui-tree-model", "../../utils/
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var aurelia_framework_1, ui_tree_model_1, ui_event_1, _, UITree, TreeNode;
     var __moduleName = context_1 && context_1.id;
+    var aurelia_framework_1, ui_tree_model_1, ui_event_1, _, UITree, TreeNode;
     return {
         setters: [
             function (aurelia_framework_1_1) {
@@ -217,9 +217,15 @@ System.register(["aurelia-framework", "../../utils/ui-tree-model", "../../utils/
                 UITree.prototype.scrollIntoView = function () {
                     var _this = this;
                     ui_event_1.UIEvent.queueTask(function () {
-                        var x;
-                        if ((x = _this.element.querySelector('.ui-active')) !== null)
-                            x.scrollIntoView(false);
+                        var x = _this.element.querySelector('.ui-active');
+                        if (x !== null) {
+                            var rect = x.getBoundingClientRect();
+                            if (rect.top < 0 || rect.left < 0
+                                || rect.bottom > (window.innerHeight || document.documentElement.clientHeight)
+                                || rect.right > (window.innerWidth || document.documentElement.clientWidth)) {
+                                x.scrollIntoView(false);
+                            }
+                        }
                     });
                 };
                 UITree.prototype.searchTextChanged = function (newValue) {
@@ -231,8 +237,8 @@ System.register(["aurelia-framework", "../../utils/ui-tree-model", "../../utils/
                     _.forEach(obj, function (n) {
                         n.text = n.text.replace(/<b>/gi, '')
                             .replace(/<\/b>/gi, '');
-                        n.expanded = !_.isEmpty(value) && n.level <= 2 && parentVisible === false;
-                        if (_.isEmpty(value) && self.selectedNode.id == n.id && self.selectedNode.level == n.level) {
+                        n.expanded = _.isEmpty(value) || parentVisible === false;
+                        if (_.isEmpty(value) && self.selectedNode && self.selectedNode.id == n.id && self.selectedNode.level == n.level) {
                             var p = n.parent;
                             while (p) {
                                 p.expanded = true;
@@ -251,35 +257,35 @@ System.register(["aurelia-framework", "../../utils/ui-tree-model", "../../utils/
                     });
                     return ret;
                 };
-                __decorate([
-                    aurelia_framework_1.bindable({ defaultBindingMode: aurelia_framework_1.bindingMode.twoWay }),
-                    __metadata("design:type", Object)
-                ], UITree.prototype, "value", void 0);
-                __decorate([
-                    aurelia_framework_1.bindable({ defaultBindingMode: aurelia_framework_1.bindingMode.twoWay }),
-                    __metadata("design:type", Object)
-                ], UITree.prototype, "hover", void 0);
-                __decorate([
-                    aurelia_framework_1.bindable(),
-                    __metadata("design:type", Object)
-                ], UITree.prototype, "model", void 0);
-                __decorate([
-                    aurelia_framework_1.bindable(),
-                    __metadata("design:type", ui_tree_model_1.UITreeOptions)
-                ], UITree.prototype, "options", void 0);
-                __decorate([
-                    aurelia_framework_1.computedFrom('root'),
-                    __metadata("design:type", Object),
-                    __metadata("design:paramtypes", [])
-                ], UITree.prototype, "rootNodes", null);
-                UITree = __decorate([
-                    aurelia_framework_1.autoinject(),
-                    aurelia_framework_1.inlineView("<template class=\"ui-tree-panel\"><ui-input-group class=\"ui-tree-search\" if.bind=\"searchable\">\n  <ui-input type=\"search\" t=\"[placeholder]Search\" placeholder=\"${options.labels.search}\" clear value.bind=\"searchText\" input.trigger=\"searchTextChanged(searchText) & debounce:200\"><ui-input-addon class=\"ui-text-muted\" glyph=\"glyph-search\"></ui-input-addon></ui-input></ui-input-group>\n  <div class=\"ui-tree-level\">\n    <tree-node repeat.for=\"child of root.children | sort:'name'\" node.bind=\"child\" options.bind=\"options\" nodeclick.delegate=\"itemClicked($event.detail)\" nodeover.delegate=\"itemOver($event.detail)\" nodeout.delegate=\"itemOut($event.detail)\"></tree-node>\n  </div></template>"),
-                    aurelia_framework_1.customElement('ui-tree'),
-                    __metadata("design:paramtypes", [Element])
-                ], UITree);
                 return UITree;
             }());
+            __decorate([
+                aurelia_framework_1.bindable({ defaultBindingMode: aurelia_framework_1.bindingMode.twoWay }),
+                __metadata("design:type", Object)
+            ], UITree.prototype, "value", void 0);
+            __decorate([
+                aurelia_framework_1.bindable({ defaultBindingMode: aurelia_framework_1.bindingMode.twoWay }),
+                __metadata("design:type", Object)
+            ], UITree.prototype, "hover", void 0);
+            __decorate([
+                aurelia_framework_1.bindable(),
+                __metadata("design:type", Object)
+            ], UITree.prototype, "model", void 0);
+            __decorate([
+                aurelia_framework_1.bindable(),
+                __metadata("design:type", ui_tree_model_1.UITreeOptions)
+            ], UITree.prototype, "options", void 0);
+            __decorate([
+                aurelia_framework_1.computedFrom('root'),
+                __metadata("design:type", Object),
+                __metadata("design:paramtypes", [])
+            ], UITree.prototype, "rootNodes", null);
+            UITree = __decorate([
+                aurelia_framework_1.autoinject(),
+                aurelia_framework_1.inlineView("<template class=\"ui-tree-panel\"><ui-input-group class=\"ui-tree-search\" if.bind=\"searchable\">\n  <ui-input type=\"search\" t=\"[placeholder]Search\" placeholder=\"${options.labels.search}\" clear value.bind=\"searchText\" input.trigger=\"searchTextChanged(searchText) & debounce:200\"><ui-input-addon class=\"ui-text-muted\" glyph=\"glyph-search\"></ui-input-addon></ui-input></ui-input-group>\n  <div class=\"ui-tree-level\">\n    <tree-node repeat.for=\"child of root.children | sort:'name'\" node.bind=\"child\" options.bind=\"options\" nodeclick.delegate=\"itemClicked($event.detail)\" nodeover.delegate=\"itemOver($event.detail)\" nodeout.delegate=\"itemOut($event.detail)\"></tree-node>\n  </div></template>"),
+                aurelia_framework_1.customElement('ui-tree'),
+                __metadata("design:paramtypes", [Element])
+            ], UITree);
             exports_1("UITree", UITree);
             TreeNode = (function () {
                 function TreeNode(element) {
@@ -302,21 +308,21 @@ System.register(["aurelia-framework", "../../utils/ui-tree-model", "../../utils/
                 TreeNode.prototype.doMouseOut = function () {
                     ui_event_1.UIEvent.fireEvent('nodeout', this.element, this.node);
                 };
-                __decorate([
-                    aurelia_framework_1.bindable(),
-                    __metadata("design:type", ui_tree_model_1.UITreeModel)
-                ], TreeNode.prototype, "node", void 0);
-                __decorate([
-                    aurelia_framework_1.bindable(),
-                    __metadata("design:type", ui_tree_model_1.UITreeOptions)
-                ], TreeNode.prototype, "options", void 0);
-                TreeNode = __decorate([
-                    aurelia_framework_1.autoinject(),
-                    aurelia_framework_1.inlineView("<template class=\"ui-tree-item\">\n    <div class=\"ui-tree-item-link ${node.disabled?'ui-disabled':''}\" if.bind=\"node.isVisible\">\n        <a class=\"ui-expander ${node.expanded?'expanded':''}\" if.bind=\"!node.leaf\" click.trigger=\"[node.expanded=!node.expanded, hideByCount=true]\">\n            <ui-glyph glyph.bind=\"node.expanded?'glyph-tree-collapse':'glyph-tree-expand'\"></ui-glyph>\n        </a>\n        <a class=\"ui-node-checkbox\" if.bind=\"options.showCheckbox && node.level>=options.checkboxLevel\" click.trigger=\"fireClicked()\">\n          <ui-glyph glyph.bind=\"node.checked==1?'glyph-tree-check-on':(node.checked==2?'glyph-tree-check-partial':'glyph-tree-check-off')\"></ui-glyph>\n        </a>\n        <a class=\"ui-node-link ${!options.showCheckbox && node.active?'ui-active':node.childActive?'ui-partial':''}\" data-id=\"${node.id}\" click.trigger=\"fireClicked()\" mouseover.delegate=\"doMouseOver($event)\" mouseout.delegate=\"doMouseOut($event)\">\n            <ui-glyph glyph.bind=\"(node.expanded?node.openIcon:node.closedIcon)||node.icon\" class.bind=\"(node.expanded?node.openIcon:node.closedIcon)||node.icon\" if.bind=\"node.icon||node.openIcon\"></ui-glyph>\n            <span innerhtml.bind=\"node.text\" class=\"${node.level<options.checkboxLevel && node.checked!=0?'ui-strong':''}\"></span>\n        </a>\n    </div>\n    <div class=\"ui-tree-level\" if.bind=\"node.isVisible && !node.leaf && node.expanded\">\n        <tree-node repeat.for=\"child of node.children | sort:'name'\" if.bind=\"!(canHideByCount && hideByCount && $index>=options.maxCount)\" node.bind=\"child\" options.bind=\"options\"></tree-node>\n        <div>\n        <div if.bind=\"node.children && node.children.length==0\" class=\"ui-font-small ui-text-muted\" t=\"No Items\">${options.labels.noitems}</div>\n        <a class=\"ui-font-small ui-strong\" click.trigger=\"hideByCount=false\" if.bind=\"canHideByCount && hideByCount\" t=\"More\">${options.labels.more}</a>\n        <a class=\"ui-font-small ui-strong\" click.trigger=\"hideByCount=true\" if.bind=\"canHideByCount && !hideByCount\" t=\"Less\">${options.labels.less}</a>\n        </div>\n    </div>\n</template>"),
-                    __metadata("design:paramtypes", [Element])
-                ], TreeNode);
                 return TreeNode;
             }());
+            __decorate([
+                aurelia_framework_1.bindable(),
+                __metadata("design:type", ui_tree_model_1.UITreeModel)
+            ], TreeNode.prototype, "node", void 0);
+            __decorate([
+                aurelia_framework_1.bindable(),
+                __metadata("design:type", ui_tree_model_1.UITreeOptions)
+            ], TreeNode.prototype, "options", void 0);
+            TreeNode = __decorate([
+                aurelia_framework_1.autoinject(),
+                aurelia_framework_1.inlineView("<template class=\"ui-tree-item\">\n    <div class=\"ui-tree-item-link ${node.disabled?'ui-disabled':''}\" if.bind=\"node.isVisible\">\n        <a class=\"ui-expander ${node.expanded?'expanded':''}\" if.bind=\"!node.leaf\" click.trigger=\"[node.expanded=!node.expanded, hideByCount=true]\">\n            <ui-glyph glyph.bind=\"node.expanded?'glyph-tree-collapse':'glyph-tree-expand'\"></ui-glyph>\n        </a>\n        <a class=\"ui-node-checkbox\" if.bind=\"options.showCheckbox && node.level>=options.checkboxLevel\" click.trigger=\"fireClicked()\">\n          <ui-glyph glyph.bind=\"node.checked==1?'glyph-tree-check-on':(node.checked==2?'glyph-tree-check-partial':'glyph-tree-check-off')\"></ui-glyph>\n        </a>\n        <a class=\"ui-node-link ${!options.showCheckbox && node.active?'ui-active':node.childActive?'ui-partial':''}\" data-id=\"${node.id}\" click.trigger=\"fireClicked()\" mouseover.delegate=\"doMouseOver($event)\" mouseout.delegate=\"doMouseOut($event)\">\n            <ui-glyph glyph.bind=\"(node.expanded?node.openIcon:node.closedIcon)||node.icon\" class.bind=\"(node.expanded?node.openIcon:node.closedIcon)||node.icon\" if.bind=\"node.icon||node.openIcon\"></ui-glyph>\n            <span innerhtml.bind=\"node.text\" class=\"${node.level<options.checkboxLevel && node.checked!=0?'ui-strong':''}\"></span>\n        </a>\n    </div>\n    <div class=\"ui-tree-level\" if.bind=\"node.isVisible && !node.leaf && node.expanded\">\n        <tree-node repeat.for=\"child of node.children | sort:'name'\" if.bind=\"!(canHideByCount && hideByCount && $index>=options.maxCount)\" node.bind=\"child\" options.bind=\"options\"></tree-node>\n        <div>\n        <div if.bind=\"node.children && node.children.length==0\" class=\"ui-font-small ui-text-muted\" t=\"No Items\">${options.labels.noitems}</div>\n        <a class=\"ui-font-small ui-strong\" click.trigger=\"hideByCount=false\" if.bind=\"canHideByCount && hideByCount\" t=\"More\">${options.labels.more}</a>\n        <a class=\"ui-font-small ui-strong\" click.trigger=\"hideByCount=true\" if.bind=\"canHideByCount && !hideByCount\" t=\"Less\">${options.labels.less}</a>\n        </div>\n    </div>\n</template>"),
+                __metadata("design:paramtypes", [Element])
+            ], TreeNode);
             exports_1("TreeNode", TreeNode);
         }
     };

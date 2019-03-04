@@ -9,8 +9,8 @@ System.register(["aurelia-framework", "lodash"], function (exports_1, context_1)
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var aurelia_framework_1, _, UITreeModel, UITreeOptions;
     var __moduleName = context_1 && context_1.id;
+    var aurelia_framework_1, _, UITreeModel, UITreeOptions;
     return {
         setters: [
             function (aurelia_framework_1_1) {
@@ -110,14 +110,14 @@ System.register(["aurelia-framework", "lodash"], function (exports_1, context_1)
                     enumerable: true,
                     configurable: true
                 });
-                UITreeModel.seed = 0;
-                __decorate([
-                    aurelia_framework_1.computedFrom('leaf', 'icon'),
-                    __metadata("design:type", Object),
-                    __metadata("design:paramtypes", [])
-                ], UITreeModel.prototype, "isLeaf", null);
                 return UITreeModel;
             }());
+            UITreeModel.seed = 0;
+            __decorate([
+                aurelia_framework_1.computedFrom('leaf', 'icon'),
+                __metadata("design:type", Object),
+                __metadata("design:paramtypes", [])
+            ], UITreeModel.prototype, "isLeaf", null);
             exports_1("UITreeModel", UITreeModel);
             UITreeOptions = (function () {
                 function UITreeOptions(obj) {

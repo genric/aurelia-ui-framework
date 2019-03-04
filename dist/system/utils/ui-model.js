@@ -9,8 +9,8 @@ System.register(["aurelia-framework", "aurelia-logging", "./ui-http", "./ui-even
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var aurelia_framework_1, aurelia_logging_1, ui_http_1, ui_event_1, ui_utils_1, _, UIModel;
     var __moduleName = context_1 && context_1.id;
+    var aurelia_framework_1, aurelia_logging_1, ui_http_1, ui_event_1, ui_utils_1, _, UIModel, UIModel_1;
     return {
         setters: [
             function (aurelia_framework_1_1) {
@@ -33,7 +33,7 @@ System.register(["aurelia-framework", "aurelia-logging", "./ui-http", "./ui-even
             }
         ],
         execute: function () {
-            UIModel = (function () {
+            UIModel = UIModel_1 = (function () {
                 function UIModel() {
                     this.__observers__ = [];
                     Object.defineProperties(this, {
@@ -65,7 +65,6 @@ System.register(["aurelia-framework", "aurelia-logging", "./ui-http", "./ui-even
                     });
                     this.logger.info("Model Initialized");
                 }
-                UIModel_1 = UIModel;
                 UIModel.prototype.init = function () {
                     var _this = this;
                     this.saveChanges();
@@ -189,14 +188,13 @@ System.register(["aurelia-framework", "aurelia-logging", "./ui-http", "./ui-even
                         return t.hasOwnProperty(key) && (t[key] === o[key]);
                     });
                 };
-                var UIModel_1;
-                UIModel = UIModel_1 = __decorate([
-                    aurelia_framework_1.autoinject(),
-                    aurelia_framework_1.transient(),
-                    __metadata("design:paramtypes", [])
-                ], UIModel);
                 return UIModel;
             }());
+            UIModel = UIModel_1 = __decorate([
+                aurelia_framework_1.autoinject(),
+                aurelia_framework_1.transient(),
+                __metadata("design:paramtypes", [])
+            ], UIModel);
             exports_1("UIModel", UIModel);
         }
     };

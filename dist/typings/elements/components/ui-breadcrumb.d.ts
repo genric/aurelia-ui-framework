@@ -11,12 +11,12 @@ export declare class UIChip {
 export declare class UIBreadcrumb {
     element: Element;
     constructor(element: Element);
-    private fireChange;
+    private fireChange($event);
 }
 export declare class UICrumb {
     element: Element;
     constructor(element: Element);
     id: string;
     href: string;
-    private fireClick;
+    private fireClick($event);
 }

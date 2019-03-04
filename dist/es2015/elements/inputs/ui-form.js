@@ -7,7 +7,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var UIInputLabel_1;
 import { autoinject, customElement, bindable, bindingMode, inlineView, containerless } from 'aurelia-framework';
 import { UIEvent } from "../../utils/ui-event";
 import * as _ from "lodash";
@@ -227,3 +226,4 @@ UIInputLabel = UIInputLabel_1 = __decorate([
     __metadata("design:paramtypes", [Element])
 ], UIInputLabel);
 export { UIInputLabel };
+var UIInputLabel_1;

@@ -9,8 +9,8 @@ System.register(["aurelia-framework", "kramed"], function (exports_1, context_1)
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var aurelia_framework_1, kramed, MdView;
     var __moduleName = context_1 && context_1.id;
+    var aurelia_framework_1, kramed, MdView;
     return {
         setters: [
             function (aurelia_framework_1_1) {
@@ -55,13 +55,13 @@ System.register(["aurelia-framework", "kramed"], function (exports_1, context_1)
                         renderer: rend
                     });
                 };
-                MdView = __decorate([
-                    aurelia_framework_1.autoinject(),
-                    aurelia_framework_1.customAttribute('mdview'),
-                    __metadata("design:paramtypes", [Element])
-                ], MdView);
                 return MdView;
             }());
+            MdView = __decorate([
+                aurelia_framework_1.autoinject(),
+                aurelia_framework_1.customAttribute('mdview'),
+                __metadata("design:paramtypes", [Element])
+            ], MdView);
             exports_1("MdView", MdView);
         }
     };

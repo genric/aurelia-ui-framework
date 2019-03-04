@@ -9,8 +9,8 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var aurelia_framework_1, UIRibbon;
     var __moduleName = context_1 && context_1.id;
+    var aurelia_framework_1, UIRibbon;
     return {
         setters: [
             function (aurelia_framework_1_1) {
@@ -44,21 +44,21 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
                     this.ribbon.classList.remove('ui-hidden');
                     this.ribbon.innerHTML = newValue;
                 };
-                __decorate([
-                    aurelia_framework_1.bindable({ primaryProperty: true }),
-                    __metadata("design:type", Object)
-                ], UIRibbon.prototype, "message", void 0);
-                __decorate([
-                    aurelia_framework_1.bindable(),
-                    __metadata("design:type", Object)
-                ], UIRibbon.prototype, "theme", void 0);
-                UIRibbon = __decorate([
-                    aurelia_framework_1.autoinject(),
-                    aurelia_framework_1.customAttribute('ribbon'),
-                    __metadata("design:paramtypes", [Element])
-                ], UIRibbon);
                 return UIRibbon;
             }());
+            __decorate([
+                aurelia_framework_1.bindable({ primaryProperty: true }),
+                __metadata("design:type", Object)
+            ], UIRibbon.prototype, "message", void 0);
+            __decorate([
+                aurelia_framework_1.bindable(),
+                __metadata("design:type", Object)
+            ], UIRibbon.prototype, "theme", void 0);
+            UIRibbon = __decorate([
+                aurelia_framework_1.autoinject(),
+                aurelia_framework_1.customAttribute('ribbon'),
+                __metadata("design:paramtypes", [Element])
+            ], UIRibbon);
             exports_1("UIRibbon", UIRibbon);
         }
     };

@@ -7,7 +7,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var UITab_1;
 import { autoinject, customElement, bindable, bindingMode, children, inlineView, containerless, DOM } from 'aurelia-framework';
 import { UIUtils } from "../../utils/ui-utils";
 import { UIEvent } from "../../utils/ui-event";
@@ -333,3 +332,4 @@ UITab = UITab_1 = __decorate([
     __metadata("design:paramtypes", [Element])
 ], UITab);
 export { UITab };
+var UITab_1;

@@ -9,8 +9,8 @@ System.register(["aurelia-framework", "aurelia-router", "aurelia-logging", "./ui
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var aurelia_framework_1, aurelia_router_1, aurelia_logging_1, ui_utils_1, ui_event_1, ui_constants_1, UIApplication, AuthInterceptor;
     var __moduleName = context_1 && context_1.id;
+    var aurelia_framework_1, aurelia_router_1, aurelia_logging_1, ui_utils_1, ui_event_1, ui_constants_1, UIApplication, AuthInterceptor;
     return {
         setters: [
             function (aurelia_framework_1_1) {
@@ -219,13 +219,13 @@ System.register(["aurelia-framework", "aurelia-router", "aurelia-logging", "./ui
                         config = { message: config };
                     return ui_utils_1.UIUtils.prompt(config);
                 };
-                UIApplication = __decorate([
-                    aurelia_framework_1.singleton(),
-                    aurelia_framework_1.autoinject(),
-                    __metadata("design:paramtypes", [aurelia_router_1.Router])
-                ], UIApplication);
                 return UIApplication;
             }());
+            UIApplication = __decorate([
+                aurelia_framework_1.singleton(),
+                aurelia_framework_1.autoinject(),
+                __metadata("design:paramtypes", [aurelia_router_1.Router])
+            ], UIApplication);
             exports_1("UIApplication", UIApplication);
             AuthInterceptor = (function () {
                 function AuthInterceptor(appState) {
@@ -248,13 +248,13 @@ System.register(["aurelia-framework", "aurelia-router", "aurelia-logging", "./ui
                     }
                     return next();
                 };
-                AuthInterceptor = __decorate([
-                    aurelia_framework_1.singleton(),
-                    aurelia_framework_1.autoinject(),
-                    __metadata("design:paramtypes", [UIApplication])
-                ], AuthInterceptor);
                 return AuthInterceptor;
             }());
+            AuthInterceptor = __decorate([
+                aurelia_framework_1.singleton(),
+                aurelia_framework_1.autoinject(),
+                __metadata("design:paramtypes", [UIApplication])
+            ], AuthInterceptor);
             exports_1("AuthInterceptor", AuthInterceptor);
         }
     };

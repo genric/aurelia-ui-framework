@@ -6,8 +6,8 @@ System.register(["aurelia-framework", "../elements/inputs/ui-markdown"], functio
         else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
-    var aurelia_framework_1, ui_markdown_1, UIValidationRenderer;
     var __moduleName = context_1 && context_1.id;
+    var aurelia_framework_1, ui_markdown_1, UIValidationRenderer;
     return {
         setters: [
             function (aurelia_framework_1_1) {
@@ -81,11 +81,11 @@ System.register(["aurelia-framework", "../elements/inputs/ui-markdown"], functio
                     }
                     catch (E) { }
                 };
-                UIValidationRenderer = __decorate([
-                    aurelia_framework_1.autoinject()
-                ], UIValidationRenderer);
                 return UIValidationRenderer;
             }());
+            UIValidationRenderer = __decorate([
+                aurelia_framework_1.autoinject()
+            ], UIValidationRenderer);
             exports_1("UIValidationRenderer", UIValidationRenderer);
         }
     };

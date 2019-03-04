@@ -15,7 +15,7 @@ var ui_http_1 = require("./ui-http");
 var ui_event_1 = require("./ui-event");
 var ui_utils_1 = require("./ui-utils");
 var _ = require("lodash");
-var UIModel = (function () {
+var UIModel = UIModel_1 = (function () {
     function UIModel() {
         this.__observers__ = [];
         Object.defineProperties(this, {
@@ -47,7 +47,6 @@ var UIModel = (function () {
         });
         this.logger.info("Model Initialized");
     }
-    UIModel_1 = UIModel;
     UIModel.prototype.init = function () {
         var _this = this;
         this.saveChanges();
@@ -171,12 +170,12 @@ var UIModel = (function () {
             return t.hasOwnProperty(key) && (t[key] === o[key]);
         });
     };
-    var UIModel_1;
-    UIModel = UIModel_1 = __decorate([
-        aurelia_framework_1.autoinject(),
-        aurelia_framework_1.transient(),
-        __metadata("design:paramtypes", [])
-    ], UIModel);
     return UIModel;
 }());
+UIModel = UIModel_1 = __decorate([
+    aurelia_framework_1.autoinject(),
+    aurelia_framework_1.transient(),
+    __metadata("design:paramtypes", [])
+], UIModel);
 exports.UIModel = UIModel;
+var UIModel_1;

@@ -1,12 +1,9 @@
 System.register(["aurelia-framework"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || (function () {
-        var extendStatics = function (d, b) {
-            extendStatics = Object.setPrototypeOf ||
-                ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-                function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-            return extendStatics(d, b);
-        }
+        var extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return function (d, b) {
             extendStatics(d, b);
             function __() { this.constructor = d; }
@@ -22,8 +19,8 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var aurelia_framework_1, UIBadgeBase, UIBadge, UIBadgePrimary, UIBadgeSecondary, UIBadgeInfo, UIBadgeDanger, UIBadgeSuccess, UIBadgeWarning;
     var __moduleName = context_1 && context_1.id;
+    var aurelia_framework_1, UIBadgeBase, UIBadge, UIBadgePrimary, UIBadgeSecondary, UIBadgeInfo, UIBadgeDanger, UIBadgeSuccess, UIBadgeWarning;
     return {
         setters: [
             function (aurelia_framework_1_1) {
@@ -56,13 +53,13 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
                     _this.element = element;
                     return _this;
                 }
-                UIBadge = __decorate([
-                    aurelia_framework_1.autoinject(),
-                    aurelia_framework_1.customAttribute('badge'),
-                    __metadata("design:paramtypes", [Element])
-                ], UIBadge);
                 return UIBadge;
             }(UIBadgeBase));
+            UIBadge = __decorate([
+                aurelia_framework_1.autoinject(),
+                aurelia_framework_1.customAttribute('badge'),
+                __metadata("design:paramtypes", [Element])
+            ], UIBadge);
             exports_1("UIBadge", UIBadge);
             UIBadgePrimary = (function (_super) {
                 __extends(UIBadgePrimary, _super);
@@ -71,13 +68,13 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
                     _this.element = element;
                     return _this;
                 }
-                UIBadgePrimary = __decorate([
-                    aurelia_framework_1.autoinject(),
-                    aurelia_framework_1.customAttribute('badge-primary'),
-                    __metadata("design:paramtypes", [Element])
-                ], UIBadgePrimary);
                 return UIBadgePrimary;
             }(UIBadgeBase));
+            UIBadgePrimary = __decorate([
+                aurelia_framework_1.autoinject(),
+                aurelia_framework_1.customAttribute('badge-primary'),
+                __metadata("design:paramtypes", [Element])
+            ], UIBadgePrimary);
             exports_1("UIBadgePrimary", UIBadgePrimary);
             UIBadgeSecondary = (function (_super) {
                 __extends(UIBadgeSecondary, _super);
@@ -86,13 +83,13 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
                     _this.element = element;
                     return _this;
                 }
-                UIBadgeSecondary = __decorate([
-                    aurelia_framework_1.autoinject(),
-                    aurelia_framework_1.customAttribute('badge-secondary'),
-                    __metadata("design:paramtypes", [Element])
-                ], UIBadgeSecondary);
                 return UIBadgeSecondary;
             }(UIBadgeBase));
+            UIBadgeSecondary = __decorate([
+                aurelia_framework_1.autoinject(),
+                aurelia_framework_1.customAttribute('badge-secondary'),
+                __metadata("design:paramtypes", [Element])
+            ], UIBadgeSecondary);
             exports_1("UIBadgeSecondary", UIBadgeSecondary);
             UIBadgeInfo = (function (_super) {
                 __extends(UIBadgeInfo, _super);
@@ -101,13 +98,13 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
                     _this.element = element;
                     return _this;
                 }
-                UIBadgeInfo = __decorate([
-                    aurelia_framework_1.autoinject(),
-                    aurelia_framework_1.customAttribute('badge-info'),
-                    __metadata("design:paramtypes", [Element])
-                ], UIBadgeInfo);
                 return UIBadgeInfo;
             }(UIBadgeBase));
+            UIBadgeInfo = __decorate([
+                aurelia_framework_1.autoinject(),
+                aurelia_framework_1.customAttribute('badge-info'),
+                __metadata("design:paramtypes", [Element])
+            ], UIBadgeInfo);
             exports_1("UIBadgeInfo", UIBadgeInfo);
             UIBadgeDanger = (function (_super) {
                 __extends(UIBadgeDanger, _super);
@@ -116,13 +113,13 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
                     _this.element = element;
                     return _this;
                 }
-                UIBadgeDanger = __decorate([
-                    aurelia_framework_1.autoinject(),
-                    aurelia_framework_1.customAttribute('badge-danger'),
-                    __metadata("design:paramtypes", [Element])
-                ], UIBadgeDanger);
                 return UIBadgeDanger;
             }(UIBadgeBase));
+            UIBadgeDanger = __decorate([
+                aurelia_framework_1.autoinject(),
+                aurelia_framework_1.customAttribute('badge-danger'),
+                __metadata("design:paramtypes", [Element])
+            ], UIBadgeDanger);
             exports_1("UIBadgeDanger", UIBadgeDanger);
             UIBadgeSuccess = (function (_super) {
                 __extends(UIBadgeSuccess, _super);
@@ -131,13 +128,13 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
                     _this.element = element;
                     return _this;
                 }
-                UIBadgeSuccess = __decorate([
-                    aurelia_framework_1.autoinject(),
-                    aurelia_framework_1.customAttribute('badge-success'),
-                    __metadata("design:paramtypes", [Element])
-                ], UIBadgeSuccess);
                 return UIBadgeSuccess;
             }(UIBadgeBase));
+            UIBadgeSuccess = __decorate([
+                aurelia_framework_1.autoinject(),
+                aurelia_framework_1.customAttribute('badge-success'),
+                __metadata("design:paramtypes", [Element])
+            ], UIBadgeSuccess);
             exports_1("UIBadgeSuccess", UIBadgeSuccess);
             UIBadgeWarning = (function (_super) {
                 __extends(UIBadgeWarning, _super);
@@ -146,13 +143,13 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
                     _this.element = element;
                     return _this;
                 }
-                UIBadgeWarning = __decorate([
-                    aurelia_framework_1.autoinject(),
-                    aurelia_framework_1.customAttribute('badge-warning'),
-                    __metadata("design:paramtypes", [Element])
-                ], UIBadgeWarning);
                 return UIBadgeWarning;
             }(UIBadgeBase));
+            UIBadgeWarning = __decorate([
+                aurelia_framework_1.autoinject(),
+                aurelia_framework_1.customAttribute('badge-warning'),
+                __metadata("design:paramtypes", [Element])
+            ], UIBadgeWarning);
             exports_1("UIBadgeWarning", UIBadgeWarning);
         }
     };

@@ -1,11 +1,8 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    }
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -48,13 +45,13 @@ var UIBadge = (function (_super) {
         _this.element = element;
         return _this;
     }
-    UIBadge = __decorate([
-        aurelia_framework_1.autoinject(),
-        aurelia_framework_1.customAttribute('badge'),
-        __metadata("design:paramtypes", [Element])
-    ], UIBadge);
     return UIBadge;
 }(UIBadgeBase));
+UIBadge = __decorate([
+    aurelia_framework_1.autoinject(),
+    aurelia_framework_1.customAttribute('badge'),
+    __metadata("design:paramtypes", [Element])
+], UIBadge);
 exports.UIBadge = UIBadge;
 var UIBadgePrimary = (function (_super) {
     __extends(UIBadgePrimary, _super);
@@ -63,13 +60,13 @@ var UIBadgePrimary = (function (_super) {
         _this.element = element;
         return _this;
     }
-    UIBadgePrimary = __decorate([
-        aurelia_framework_1.autoinject(),
-        aurelia_framework_1.customAttribute('badge-primary'),
-        __metadata("design:paramtypes", [Element])
-    ], UIBadgePrimary);
     return UIBadgePrimary;
 }(UIBadgeBase));
+UIBadgePrimary = __decorate([
+    aurelia_framework_1.autoinject(),
+    aurelia_framework_1.customAttribute('badge-primary'),
+    __metadata("design:paramtypes", [Element])
+], UIBadgePrimary);
 exports.UIBadgePrimary = UIBadgePrimary;
 var UIBadgeSecondary = (function (_super) {
     __extends(UIBadgeSecondary, _super);
@@ -78,13 +75,13 @@ var UIBadgeSecondary = (function (_super) {
         _this.element = element;
         return _this;
     }
-    UIBadgeSecondary = __decorate([
-        aurelia_framework_1.autoinject(),
-        aurelia_framework_1.customAttribute('badge-secondary'),
-        __metadata("design:paramtypes", [Element])
-    ], UIBadgeSecondary);
     return UIBadgeSecondary;
 }(UIBadgeBase));
+UIBadgeSecondary = __decorate([
+    aurelia_framework_1.autoinject(),
+    aurelia_framework_1.customAttribute('badge-secondary'),
+    __metadata("design:paramtypes", [Element])
+], UIBadgeSecondary);
 exports.UIBadgeSecondary = UIBadgeSecondary;
 var UIBadgeInfo = (function (_super) {
     __extends(UIBadgeInfo, _super);
@@ -93,13 +90,13 @@ var UIBadgeInfo = (function (_super) {
         _this.element = element;
         return _this;
     }
-    UIBadgeInfo = __decorate([
-        aurelia_framework_1.autoinject(),
-        aurelia_framework_1.customAttribute('badge-info'),
-        __metadata("design:paramtypes", [Element])
-    ], UIBadgeInfo);
     return UIBadgeInfo;
 }(UIBadgeBase));
+UIBadgeInfo = __decorate([
+    aurelia_framework_1.autoinject(),
+    aurelia_framework_1.customAttribute('badge-info'),
+    __metadata("design:paramtypes", [Element])
+], UIBadgeInfo);
 exports.UIBadgeInfo = UIBadgeInfo;
 var UIBadgeDanger = (function (_super) {
     __extends(UIBadgeDanger, _super);
@@ -108,13 +105,13 @@ var UIBadgeDanger = (function (_super) {
         _this.element = element;
         return _this;
     }
-    UIBadgeDanger = __decorate([
-        aurelia_framework_1.autoinject(),
-        aurelia_framework_1.customAttribute('badge-danger'),
-        __metadata("design:paramtypes", [Element])
-    ], UIBadgeDanger);
     return UIBadgeDanger;
 }(UIBadgeBase));
+UIBadgeDanger = __decorate([
+    aurelia_framework_1.autoinject(),
+    aurelia_framework_1.customAttribute('badge-danger'),
+    __metadata("design:paramtypes", [Element])
+], UIBadgeDanger);
 exports.UIBadgeDanger = UIBadgeDanger;
 var UIBadgeSuccess = (function (_super) {
     __extends(UIBadgeSuccess, _super);
@@ -123,13 +120,13 @@ var UIBadgeSuccess = (function (_super) {
         _this.element = element;
         return _this;
     }
-    UIBadgeSuccess = __decorate([
-        aurelia_framework_1.autoinject(),
-        aurelia_framework_1.customAttribute('badge-success'),
-        __metadata("design:paramtypes", [Element])
-    ], UIBadgeSuccess);
     return UIBadgeSuccess;
 }(UIBadgeBase));
+UIBadgeSuccess = __decorate([
+    aurelia_framework_1.autoinject(),
+    aurelia_framework_1.customAttribute('badge-success'),
+    __metadata("design:paramtypes", [Element])
+], UIBadgeSuccess);
 exports.UIBadgeSuccess = UIBadgeSuccess;
 var UIBadgeWarning = (function (_super) {
     __extends(UIBadgeWarning, _super);
@@ -138,11 +135,11 @@ var UIBadgeWarning = (function (_super) {
         _this.element = element;
         return _this;
     }
-    UIBadgeWarning = __decorate([
-        aurelia_framework_1.autoinject(),
-        aurelia_framework_1.customAttribute('badge-warning'),
-        __metadata("design:paramtypes", [Element])
-    ], UIBadgeWarning);
     return UIBadgeWarning;
 }(UIBadgeBase));
+UIBadgeWarning = __decorate([
+    aurelia_framework_1.autoinject(),
+    aurelia_framework_1.customAttribute('badge-warning'),
+    __metadata("design:paramtypes", [Element])
+], UIBadgeWarning);
 exports.UIBadgeWarning = UIBadgeWarning;

@@ -189,9 +189,15 @@ let UITree = class UITree {
     }
     scrollIntoView() {
         UIEvent.queueTask(() => {
-            let x;
-            if ((x = this.element.querySelector('.ui-active')) !== null)
-                x.scrollIntoView(false);
+            let x = this.element.querySelector('.ui-active');
+            if (x !== null) {
+                let rect = x.getBoundingClientRect();
+                if (rect.top < 0 || rect.left < 0
+                    || rect.bottom > (window.innerHeight || document.documentElement.clientHeight)
+                    || rect.right > (window.innerWidth || document.documentElement.clientWidth)) {
+                    x.scrollIntoView(false);
+                }
+            }
         });
     }
     searchTextChanged(newValue) {
@@ -202,8 +208,8 @@ let UITree = class UITree {
         _.forEach(obj, (n) => {
             n.text = n.text.replace(/<b>/gi, '')
                 .replace(/<\/b>/gi, '');
-            n.expanded = !_.isEmpty(value) && n.level <= 2 && parentVisible === false;
-            if (_.isEmpty(value) && self.selectedNode.id == n.id && self.selectedNode.level == n.level) {
+            n.expanded = _.isEmpty(value) || parentVisible === false;
+            if (_.isEmpty(value) && self.selectedNode && self.selectedNode.id == n.id && self.selectedNode.level == n.level) {
                 var p = n.parent;
                 while (p) {
                     p.expanded = true;

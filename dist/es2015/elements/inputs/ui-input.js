@@ -101,7 +101,12 @@ let UIInput = class UIInput extends UIBaseInput {
     valueChanged(newValue) {
         if (this.type === 'number') {
             let num = parseFloat(newValue);
-            this.decimal = this.number = isNaN(num) ? null : num;
+            if (isNaN(num)) {
+                this.decimal = this.number = null;
+            }
+            else if (num !== this.number) {
+                this.decimal = this.number = num;
+            }
             if (!this.number && this.number !== 0) {
                 this.value = '';
             }

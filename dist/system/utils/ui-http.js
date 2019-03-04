@@ -9,8 +9,8 @@ System.register(["aurelia-framework", "aurelia-logging", "aurelia-fetch-client",
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var aurelia_framework_1, aurelia_logging_1, aurelia_fetch_client_1, aurelia_event_aggregator_1, ui_application_1, ui_constants_1, UIHttpService;
     var __moduleName = context_1 && context_1.id;
+    var aurelia_framework_1, aurelia_logging_1, aurelia_fetch_client_1, aurelia_event_aggregator_1, ui_application_1, ui_constants_1, UIHttpService;
     return {
         setters: [
             function (aurelia_framework_1_1) {
@@ -248,14 +248,14 @@ System.register(["aurelia-framework", "aurelia-logging", "aurelia-fetch-client",
                     }
                     return headers;
                 };
-                UIHttpService = __decorate([
-                    aurelia_framework_1.autoinject(),
-                    __metadata("design:paramtypes", [aurelia_fetch_client_1.HttpClient,
-                        ui_application_1.UIApplication,
-                        aurelia_event_aggregator_1.EventAggregator])
-                ], UIHttpService);
                 return UIHttpService;
             }());
+            UIHttpService = __decorate([
+                aurelia_framework_1.autoinject(),
+                __metadata("design:paramtypes", [aurelia_fetch_client_1.HttpClient,
+                    ui_application_1.UIApplication,
+                    aurelia_event_aggregator_1.EventAggregator])
+            ], UIHttpService);
             exports_1("UIHttpService", UIHttpService);
         }
     };

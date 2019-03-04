@@ -15,6 +15,5 @@ export declare module UIConstants {
     } | {
         id: string;
         name: string;
-        rtl?: undefined;
     })[];
 }
